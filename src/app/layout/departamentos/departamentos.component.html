@@ -1,9 +1,9 @@
-<div class="panel panel-default">
+<div class="panel panel-default" [@routerTransition]>
   <div class="panel-heading">
     <div class="row" style="padding: 5px;">
       <div class="col-md-9">Lista de Departamentos</div>
       <div class="col-md-3">
-        <button class="btn btn-success" style="float: right;">Agregar Departamento</button>
+        <button class="btn btn-success" style="float: right;" (click)="agregar()" >Agregar Departamento</button>
       </div>
     </div>
   </div>
@@ -18,15 +18,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>
-            <button class="btn btn-primary">Editar</button>
-            <button class="btn btn-danger">Eliminar</button>
+        <tr *ngFor="let depart of departamentos">
+          <td>{{ depart.Id }}</td>
+          <td>{{ depart.Descripcion }}</td>
+          <td>{{ depart.Estado ? "Activo" : "Inactivo" }}</td>
+          <td class="text-center">
+            <button class="btn btn-primary" (click)="editar(depart.Id)" >Editar</button>
+            <button class="btn btn-danger" (click)="eliminar(depart.Id)">Eliminar</button>
           </td>
-        </tr>
+        </tr> 
       </tbody>
     </table>
   </div>
