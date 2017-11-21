@@ -3,7 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { DepartamentosComponent } from './departamentos.component';
 
 const routes: Routes = [
-    { path: '', component: DepartamentosComponent }
+    { path: '', component: DepartamentosComponent,
+    children: [
+      { path: 'formulario', loadChildren: './formulario/formulario.module#FormularioModule' }
+    ] 
+  }
 ];
 
 @NgModule({
