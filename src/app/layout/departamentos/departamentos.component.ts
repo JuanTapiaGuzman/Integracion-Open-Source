@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { routerTransition } from '../../router.animations';
-import { Http } from '@angular/http';
 import { DataTableResource } from 'angular-4-data-table';
+import { DepartamentosService } from 'app/shared/services/departamentos.service';
+import { Departamento } from 'app/shared/models/Departamento';
 
 @Component({
   selector: 'app-departamentos',
@@ -10,15 +11,11 @@ import { DataTableResource } from 'angular-4-data-table';
   animations: [routerTransition()]
 })
 export class DepartamentosComponent {
-  private url: string = "http://activosfijosapi20171107045022.azurewebsites.net/Api/Departamento/";
-  departamentos: any[];
-
-  constructor(http: Http) {
-    http.get(this.url)
-    .subscribe( response => {
-      this.departamentos = response.json().departamentos;
-    });
-  }
+  departamentos: Departamento[];
+  
+    constructor( private departamentosService: DepartamentosService) {
+      this.departamentosService.getAllDepartamentos().then(departamentos => this.departamentos = departamentos);
+    }
 
   editar(id){
     alert("Se edito " + id);

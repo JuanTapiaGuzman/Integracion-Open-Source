@@ -5,6 +5,7 @@ import { DepartamentosRoutingModule } from './departamentos-routing.module';
 import { DepartamentosComponent } from './departamentos.component';
 import { PageHeaderModule } from './../../shared';
 import { FormularioComponent } from './formulario/formulario.component';
+import { DepartamentosService } from 'app/shared/services/departamentos.service';
 
 @NgModule({
   imports: [
@@ -12,6 +13,7 @@ import { FormularioComponent } from './formulario/formulario.component';
     DepartamentosRoutingModule,
     PageHeaderModule
   ],
-  declarations: [DepartamentosComponent, FormularioComponent]
+  declarations: [DepartamentosComponent, FormularioComponent],
+  providers: [DepartamentosService]
 })
 export class DepartamentosModule { }
