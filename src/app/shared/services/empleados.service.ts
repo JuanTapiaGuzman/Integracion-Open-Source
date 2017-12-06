@@ -1,48 +1,48 @@
 import { Injectable } from '@angular/core';
-import { Departamento } from 'app/shared/models/departamento';
+import { Empleado } from 'app/shared/models/empleado';
 import 'rxjs/add/operator/toPromise';
 import { Http } from '@angular/http';
 
 @Injectable()
-export class DepartamentosService {
-  private url: string = "http://activosfijosapi20171107045022.azurewebsites.net/Api/Departamento/";
+export class EmpleadosService {
+  private url: string = "http://activosfijosapi20171107045022.azurewebsites.net/Api/Empleado/";
   result: JSON;
 
   constructor(private http: Http) {}
     
     private headers = new Headers({ 'Content-Type': 'application/json' });
     
-     getAllDepartamentos(): Promise<Departamento[]> {
+     getAllEmpleados(): Promise<Empleado[]> {
        return this.http.get(this.url)
          .toPromise()
-         .then(response => response.json().departamentos as Departamento[])
+         .then(response => response.json().empleados as Empleado[])
          .catch(this.handleError);
      }
     
-     getDepartamento(id: number): Promise<Departamento> {
+     getEmpleado(id: number): Promise<Empleado> {
        return this.http.get(this.url)
          .toPromise()
-         .then(response => response.json().departamento as Departamento)
+         .then(response => response.json().empleado as Empleado)
          .catch(this.handleError);
      }
     
-     postDepartamento(departamento: Departamento): Promise<Departamento> {
+     postEmpleado(empleado: Empleado): Promise<Empleado> {
        return this.http
-         .post(this.url, JSON.stringify(departamento))
+         .post(this.url, JSON.stringify(empleado))
          .toPromise()
-         .then(res => res.json() as Departamento)
+         .then(res => res.json() as Empleado)
          .catch(this.handleError);
      }
     
-     updateDepartamento(departamento: Departamento): Promise<Departamento> {
+     updateEmpleado(empleado: Empleado): Promise<Empleado> {
        return this.http
-         .put(this.url, JSON.stringify(departamento))
+         .put(this.url, JSON.stringify(empleado))
          .toPromise()
-         .then(() => departamento)
+         .then(() => empleado)
          .catch(this.handleError);
      }
     
-     deleteDepartamento(departamento: Departamento): Promise<void> {
+     deleteEmpleado(empleado: Empleado): Promise<void> {
        return this.http.delete(this.url)
          .toPromise()
          .then(() => null)
