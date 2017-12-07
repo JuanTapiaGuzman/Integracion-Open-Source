@@ -20,7 +20,7 @@ export class EmpleadosService {
      }
     
      getEmpleado(id: number): Promise<Empleado> {
-       return this.http.get(this.url)
+       return this.http.get(this.url + id)
          .toPromise()
          .then(response => response.json().empleado as Empleado)
          .catch(this.handleError);
@@ -43,7 +43,7 @@ export class EmpleadosService {
      }
     
      deleteEmpleado(empleado: Empleado): Promise<void> {
-       return this.http.delete(this.url)
+       return this.http.delete(this.url + empleado.Id)
          .toPromise()
          .then(() => null)
          .catch(this.handleError);

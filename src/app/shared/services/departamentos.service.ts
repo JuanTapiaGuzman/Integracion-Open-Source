@@ -28,8 +28,6 @@ export class DepartamentosService {
      }
     
      postDepartamento(departamento: Departamento): Promise<Departamento> {
-      let headers = new Headers({ 'Content-Type': 'application/json' });
-      let options = new RequestOptions({ headers: headers });
        return this.http
          .post(this.url, JSON.stringify(departamento))
          .toPromise()
@@ -39,14 +37,14 @@ export class DepartamentosService {
     
      updateDepartamento(departamento: Departamento): Promise<Departamento> {
        return this.http
-         .put(this.url + departamento.Id, JSON.stringify(departamento))
+         .put(this.url, JSON.stringify(departamento))
          .toPromise()
          .then(() => departamento)
          .catch(this.handleError);
      }
     
      deleteDepartamento(departamento: Departamento): Promise<void> {
-       return this.http.delete(this.url)
+       return this.http.delete(this.url + departamento.Id)
          .toPromise()
          .then(() => null)
          .catch(this.handleError);

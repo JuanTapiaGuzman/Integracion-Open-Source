@@ -5,5 +5,5 @@ export class Empleado{
     ID_Departamento: number;
     TipoPersona: string;
     FechaIngreso: Date;
-    Estado: string;
+    Estado: boolean;
 }
