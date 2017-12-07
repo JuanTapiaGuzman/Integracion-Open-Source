@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Departamento } from 'app/shared/models/departamento';
 import 'rxjs/add/operator/toPromise';
 import { Http } from '@angular/http';
+import { RequestOptions } from '@angular/http';
 
 @Injectable()
 export class DepartamentosService {
@@ -27,6 +28,8 @@ export class DepartamentosService {
      }
     
      postDepartamento(departamento: Departamento): Promise<Departamento> {
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      let options = new RequestOptions({ headers: headers });
        return this.http
          .post(this.url, JSON.stringify(departamento))
          .toPromise()

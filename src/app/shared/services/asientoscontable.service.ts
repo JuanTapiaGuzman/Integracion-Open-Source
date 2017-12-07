@@ -36,7 +36,7 @@ export class AsientosContableService {
     
      updateAsientoContable(asientoContable: AsientoContable): Promise<AsientoContable> {
        return this.http
-         .put(this.url + asientoContable.Id, JSON.stringify(asientoContable))
+         .put(this.url, JSON.stringify(asientoContable))
          .toPromise()
          .then(() => asientoContable)
          .catch(this.handleError);
