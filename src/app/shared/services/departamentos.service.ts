@@ -20,7 +20,7 @@ export class DepartamentosService {
      }
     
      getDepartamento(id: number): Promise<Departamento> {
-       return this.http.get(this.url)
+       return this.http.get(this.url + id)
          .toPromise()
          .then(response => response.json().departamento as Departamento)
          .catch(this.handleError);

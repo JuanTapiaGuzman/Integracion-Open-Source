@@ -16,25 +16,23 @@ export class AddDepartamentoComponent {
     private route: ActivatedRoute,
     private router: Router) { }
 
-    departamentoForm = new FormGroup({
-      id: new FormControl(),
-      descripcion: new FormControl(),
-      estado: new FormControl()
-    })
+  departamentoForm = new FormGroup({
+    id: new FormControl(),
+    descripcion: new FormControl(),
+    estado: new FormControl()
+  })
 
-    onFormSubmit(){
-      let descripcion = this.departamentoForm.get('descripcion').value;
-      let estado = this.departamentoForm.get('estado').value;
+  onFormSubmit(){
+    let descripcion = this.departamentoForm.get('descripcion').value;
+    let estado = this.departamentoForm.get('estado').value;
 
-      let departamento = new Departamento();
-      departamento.Id = null;
-      departamento.Descripcion = descripcion;
-      departamento.Estado = estado;
+    let departamento = new Departamento();
+    departamento.Id = null;
+    departamento.Descripcion = descripcion;
+    departamento.Estado = estado;
 
-      this.departamentoService.postDepartamento(departamento)
-          .then(data => this.router.navigate([ '../list/view', data.Id ], { relativeTo: this.route })
-        );
-    }
-
-
+    this.departamentoService.postDepartamento(departamento)
+        .then(data => this.router.navigate([ '../list/view', data.Id ], { relativeTo: this.route })
+      );
+  }
 }
