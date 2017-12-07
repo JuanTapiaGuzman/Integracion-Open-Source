@@ -1,0 +1,7 @@
+<h3>Editar departamento</h3>
+<p *ngIf="departamento"><b>Country Id: {{departamento.Id }} </b></p>
+<form [formGroup]="departamentoForm" (ngSubmit)="onFormSubmit()">
+   <p> Descripcion: <input formControlName="descripcion"> </p>
+   <p> Estado: <input formControlName="estado"> </p>
+   <p> <button>Actualizar</button> </p>
+</form> 

@@ -1,33 +1,10 @@
-<div class="panel panel-default" [@routerTransition]>
-  <div class="panel-heading">
-    <div class="row" style="padding: 5px;">
-      <div class="col-md-9">Lista de Departamentos</div>
-      <div class="col-md-3">
-        <button class="btn btn-success" style="float: right;" (click)="agregar()" >Agregar Departamento</button>
-      </div>
-    </div>
-  </div>
-  <div class="panel-body">
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Descripcion</th>
-          <th>Estado</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let depart of departamentos">
-          <td>{{ depart.Id }}</td>
-          <td>{{ depart.Descripcion }}</td>
-          <td>{{ depart.Estado ? "Activo" : "Inactivo" }}</td>
-          <td class="text-center">
-            <button class="btn btn-primary" (click)="editar(depart.Id)" >Editar</button>
-            <button class="btn btn-danger" (click)="eliminar(depart.Id)">Eliminar</button>
-          </td>
-        </tr> 
-      </tbody>
-    </table>
-  </div>
+<h2>MANTENIMIENTO DEPARTAMENTOS</h2>
+<nav [ngClass] = "'child-menu'">
+  <ul>
+<li><a [routerLink]="['add']" routerLinkActive="active">Agregar Departamento</a></li>
+<li><a [routerLink]="['list']" routerLinkActive="active">Listado Departamentos</a></li>
+  </ul>  
+</nav>  
+<div [ngClass] = "'child-container'">	
+<router-outlet></router-outlet>	
 </div>

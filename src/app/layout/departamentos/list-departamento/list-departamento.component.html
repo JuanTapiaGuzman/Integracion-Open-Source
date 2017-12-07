@@ -1,0 +1,10 @@
+<h3>Listado Departamento</h3>
+<div *ngFor="let departamento of departamentos | async" [ngClass]= "'sub-child-menu'">
+<p>{{departamento.Descripcion}}. {{departamento.Estado}}
+	<a [routerLink]="['view', departamento.Id]" routerLinkActive="active">View</a> |
+	<a [routerLink]="['edit', departamento.Id]" routerLinkActive="active">Edit</a>
+</p>
+</div>
+<div [ngClass]= "'sub-child-container'">
+	<router-outlet></router-outlet>  
+</div> 

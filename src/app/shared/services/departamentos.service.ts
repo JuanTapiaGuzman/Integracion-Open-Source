@@ -36,7 +36,7 @@ export class DepartamentosService {
     
      updateDepartamento(departamento: Departamento): Promise<Departamento> {
        return this.http
-         .put(this.url, JSON.stringify(departamento))
+         .put(this.url + departamento.Id, JSON.stringify(departamento))
          .toPromise()
          .then(() => departamento)
          .catch(this.handleError);
