@@ -14,9 +14,9 @@ export class DetailDepartamentoComponent implements OnInit {
 	constructor(private departamentoService: DepartamentosService,
               private route: ActivatedRoute) { }
               
-    ngOnInit() {
-       this.route.params
-        .switchMap((params: Params) => this.departamentoService.getDepartamento(+params['departamento-id']))
-        .subscribe(departamento => this.departamento = departamento);
-    }	
+  ngOnInit() {
+      this.route.params
+      .switchMap((params: Params) => this.departamentoService.getDepartamento(+params['departamento-id']))
+      .subscribe(departamento => this.departamento = departamento);
+  }	
 }

@@ -10,6 +10,3 @@ import { routerTransition } from '../../router.animations';
 export class DepartamentosComponent {
   
 }
-
-
-

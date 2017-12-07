@@ -1,0 +1,11 @@
+<h3>Agregar empleado</h3>
+<form [formGroup]="empleadoForm" (ngSubmit)="onFormSubmit()">
+    <p> Nombre: <input formControlName="nombre"> </p>
+    <p> Cedula: <input formControlName="cedula"> </p>
+    <p> ID_Empleado: <input formControlName="iD_Empleado"> </p>
+    <p> TipoPersona: <input formControlName="tipoPersona"> </p>
+    <p> FechaIngreso: <input formControlName="fechaIngreso"> </p>
+    <p> Estado: <input formControlName="estado"> </p>
+   <p> <button>Agregar</button> </p>
+</form> 
+
