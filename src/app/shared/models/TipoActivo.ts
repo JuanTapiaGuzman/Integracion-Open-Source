@@ -3,5 +3,5 @@ export class TipoActivo{
     Descripcion: string;
     CuentaContableCompra: string;
     CuentaContableDepreciacion: string;
-    Estado: string;
+    Estado: boolean;
 }

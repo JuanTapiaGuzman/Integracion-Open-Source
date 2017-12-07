@@ -6,5 +6,5 @@ export class AsientoContable{
     TipoMovimiento: string;
     FechaAsiento: Date;
     MontoAsiento: number;
-    Estado: string;
+    Estado: boolean;
 }
