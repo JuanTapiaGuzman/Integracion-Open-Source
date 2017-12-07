@@ -20,7 +20,7 @@ export class ActivosService {
      }
     
      getActivo(id: number): Promise<Activo> {
-       return this.http.get(this.url)
+       return this.http.get(this.url + id)
          .toPromise()
          .then(response => response.json().activo as Activo)
          .catch(this.handleError);
@@ -36,14 +36,14 @@ export class ActivosService {
     
      updateActivo(activo: Activo): Promise<Activo> {
        return this.http
-         .put(this.url + activo.Id, JSON.stringify(activo))
+         .put(this.url, JSON.stringify(activo))
          .toPromise()
          .then(() => activo)
          .catch(this.handleError);
      }
     
      deleteActivo(activo: Activo): Promise<void> {
-       return this.http.delete(this.url)
+       return this.http.delete(this.url + activo.Id)
          .toPromise()
          .then(() => null)
          .catch(this.handleError);

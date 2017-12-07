@@ -20,7 +20,7 @@ export class AsientosContableService {
      }
     
      getAsientoContable(id: number): Promise<AsientoContable> {
-       return this.http.get(this.url)
+       return this.http.get(this.url + id)
          .toPromise()
          .then(response => response.json().asientoContable as AsientoContable)
          .catch(this.handleError);
@@ -36,14 +36,14 @@ export class AsientosContableService {
     
      updateAsientoContable(asientoContable: AsientoContable): Promise<AsientoContable> {
        return this.http
-         .put(this.url + asientoContable.Id, JSON.stringify(asientoContable))
+         .put(this.url, JSON.stringify(asientoContable))
          .toPromise()
          .then(() => asientoContable)
          .catch(this.handleError);
      }
     
      deleteAsientoContable(asientoContable: AsientoContable): Promise<void> {
-       return this.http.delete(this.url)
+       return this.http.delete(this.url + asientoContable.Id)
          .toPromise()
          .then(() => null)
          .catch(this.handleError);

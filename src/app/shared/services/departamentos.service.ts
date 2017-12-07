@@ -20,7 +20,7 @@ export class DepartamentosService {
      }
     
      getDepartamento(id: number): Promise<Departamento> {
-       return this.http.get(this.url)
+       return this.http.get(this.url + id)
          .toPromise()
          .then(response => response.json().departamento as Departamento)
          .catch(this.handleError);
@@ -36,14 +36,14 @@ export class DepartamentosService {
     
      updateDepartamento(departamento: Departamento): Promise<Departamento> {
        return this.http
-         .put(this.url + departamento.Id, JSON.stringify(departamento))
+         .put(this.url, JSON.stringify(departamento))
          .toPromise()
          .then(() => departamento)
          .catch(this.handleError);
      }
     
      deleteDepartamento(departamento: Departamento): Promise<void> {
-       return this.http.delete(this.url)
+       return this.http.delete(this.url + departamento.Id)
          .toPromise()
          .then(() => null)
          .catch(this.handleError);
