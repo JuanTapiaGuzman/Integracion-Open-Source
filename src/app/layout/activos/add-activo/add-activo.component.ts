@@ -19,7 +19,7 @@ export class AddActivoComponent {
       descripcion: new FormControl(),
       iD_Departamento: new FormControl(),
       iD_TipoActivo: new FormControl(),
-      fechaResgistro: new FormControl(),
+      fechaRegistro: new FormControl(),
       valorCompra: new FormControl(),
       depreciacionAcumulada: new FormControl()
     })
