@@ -16,12 +16,12 @@ export class AddActivoComponent {
     private router: Router) { }
 
     activoForm = new FormGroup({
-      nombre: new FormControl(),
-      cedula: new FormControl(),
+      descripcion: new FormControl(),
       iD_Departamento: new FormControl(),
-      tipoPersona: new FormControl(),
-      fechaIngreso: new FormControl(),
-      estado: new FormControl()
+      iD_TipoActivo: new FormControl(),
+      fechaResgistro: new FormControl(),
+      valorCompra: new FormControl(),
+      depreciacionAcumulada: new FormControl()
     })
 
     onFormSubmit(){
