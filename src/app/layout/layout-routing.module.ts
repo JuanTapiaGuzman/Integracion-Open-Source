@@ -9,7 +9,7 @@ const routes: Routes = [
             { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
             { path: 'departamentos', loadChildren: './departamentos/departamentos.module#DepartamentosModule' },
             { path: 'empleados', loadChildren: './empleados/empleados.module#EmpleadosModule' },
-            { path: 'forms', loadChildren: './form/form.module#FormModule' },
+            { path: 'activos', loadChildren: './activos/activos.module#ActivosModule' },
             { path: 'bs-element', loadChildren: './bs-element/bs-element.module#BsElementModule' },
             { path: 'grid', loadChildren: './grid/grid.module#GridModule' },
             { path: 'components', loadChildren: './bs-component/bs-component.module#BsComponentModule' },

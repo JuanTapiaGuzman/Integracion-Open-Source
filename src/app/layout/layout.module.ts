@@ -7,7 +7,6 @@ import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { HeaderComponent, SidebarComponent } from '../shared';
 import { TipoactivosComponent } from './tipoactivos/tipoactivos.component';
-import { ActivosComponent } from './activos/activos.component';
 import { CalculoComponent } from './calculo/calculo.component';
 import { AsientosComponent } from './asientos/asientos.component';
 import { DataTableModule } from 'angular-4-data-table';
@@ -25,7 +24,6 @@ import { DataTableModule } from 'angular-4-data-table';
         HeaderComponent,
         SidebarComponent,
         TipoactivosComponent,
-        ActivosComponent,
         CalculoComponent,
         AsientosComponent
     ]

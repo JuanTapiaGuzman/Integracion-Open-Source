@@ -1,3 +1,10 @@
-<p>
-  activos works!
-</p>
+<h2>MANTENIMIENTO ACTIVOS</h2>
+<nav [ngClass] = "'child-menu'">
+  <ul>
+<li><a [routerLink]="['add']" routerLinkActive="active">Agregar Activo</a></li>
+<li><a [routerLink]="['list']" routerLinkActive="active">Listado Activos</a></li>
+  </ul>  
+</nav>  
+<div [ngClass] = "'child-container'">	
+<router-outlet></router-outlet>	
+</div>

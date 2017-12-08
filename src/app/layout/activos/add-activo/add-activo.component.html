@@ -1,0 +1,10 @@
+<h3>Agregar activo</h3>
+<form [formGroup]="activoForm" (ngSubmit)="onFormSubmit()">
+    <p> Descripcion: <input formControlName="descripcion"> </p>
+    <p> ID Departamento: <input formControlName="iD_Departamento"> </p>
+    <p> ID TipoActivo: <input formControlName="iD_TipoActivo"> </p>
+    <p> Fecha Registro: <input formControlName="fechaRegistro"> </p>
+    <p> Valor Compra: <input formControlName="valorCompra"> </p>
+    <p> Depreciacion Acumulada: <input formControlName="depreciacionAcumulada"> </p>
+   <p> <button>Agregar</button> </p>
+</form> 
