@@ -3,7 +3,7 @@ export class Activo {
     Descripcion: string;
     ID_Departamento: number;
     ID_TipoActivo: number;
-    FechaResgistro: Date;
+    FechaRegistro: Date;
     ValorCompra: number;
     DepreciacionAcumulada: number;
 }

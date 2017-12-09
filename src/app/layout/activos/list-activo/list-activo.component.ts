@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Activo } from 'app/shared/models/Activo';
+import { ActivosService } from 'app/shared/services/activos.service';
 
 @Component({
   selector: 'app-list-activo',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-activo.component.scss']
 })
 export class ListActivoComponent implements OnInit {
-
-  constructor() { }
+  activos: Promise<Activo[]>;
+  constructor(private activoService: ActivosService) { }
 
   ngOnInit() {
+    this.activos = this.activoService.getAllActivos();
   }
 
 }

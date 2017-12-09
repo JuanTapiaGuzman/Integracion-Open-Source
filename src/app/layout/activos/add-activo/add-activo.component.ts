@@ -28,7 +28,7 @@ export class AddActivoComponent {
       let descripcion = this.activoForm.get('descripcion').value;
       let iD_Departamento = this.activoForm.get('iD_Departamento').value;
       let iD_TipoActivo = this.activoForm.get('iD_TipoActivo').value;
-      let fechaResgistro = this.activoForm.get('fechaResgistro').value;
+      let fechaRegistro = this.activoForm.get('fechaRegistro').value;
       let valorCompra = this.activoForm.get('valorCompra').value;
       let depreciacionAcumulada = this.activoForm.get('depreciacionAcumulada').value;
 
@@ -37,7 +37,7 @@ export class AddActivoComponent {
       activo.Descripcion = descripcion;
       activo.ID_Departamento = iD_Departamento;
       activo.ID_TipoActivo = iD_TipoActivo;
-      activo.FechaResgistro = fechaResgistro;
+      activo.FechaRegistro = fechaRegistro;
       activo.ValorCompra = valorCompra;
       activo.DepreciacionAcumulada = depreciacionAcumulada;
 

@@ -1,3 +1,10 @@
-<p>
-  list-activo works!
+<h3>Listado Activo</h3>
+<div *ngFor="let activo of activos | async" [ngClass]= "'sub-child-menu'">
+<p>{{activo.Descripcion}}
+	<a [routerLink]="['view', activo.Id]" routerLinkActive="active">View</a> |
+	<a [routerLink]="['edit', activo.Id]" routerLinkActive="active">Edit</a>
 </p>
+</div>
+<div [ngClass]= "'sub-child-container'">
+	<router-outlet></router-outlet>  
+</div> 

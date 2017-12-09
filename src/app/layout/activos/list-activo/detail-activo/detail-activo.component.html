@@ -1,3 +1,10 @@
-<p>
-  detail-activo works!
-</p>
+<h3>Activo Detalle </h3>
+<div *ngIf="activo">
+<p><b>Id:</b> {{activo.Id}},  
+<b>Descripcion:</b> {{activo.Descripcion}} </p>
+<p><b>ID Departamento:</b> {{activo.ID_Departamento}}</p>
+<p><b>Tipo Activo:</b> {{activo.ID_TipoActivo}}</p>
+<p><b>Fecha Registro:</b> {{activo.FechaRegistro }}</p>
+<p><b>Valor Compra:</b> {{activo.ValorCompra }}</p>
+<p><b>Depreciacion Acumulada:</b> {{activo.DepreciacionAcumulada}}</p>
+</div>
