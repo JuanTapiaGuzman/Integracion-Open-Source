@@ -1,3 +1,8 @@
-<p>
-  add-tipoactivo works!
-</p>
+<h3>Agregar Tipo Activo</h3>
+<form [formGroup]="tipoactivoForm" (ngSubmit)="onFormSubmit()">
+  <p> Descripcion: <input formControlName="descripcion"> </p>
+  <p> Cuenta Contable Compra: <input formControlName="cuentaContableCompra"> </p>
+  <p> Cuenta Contable Depreciacion: <input formControlName="cuentaContableDepreciacion"> </p>
+  <p> Estado: <input formControlName="estado"> </p>
+   <p> <button>Agregar</button> </p>
+</form> 

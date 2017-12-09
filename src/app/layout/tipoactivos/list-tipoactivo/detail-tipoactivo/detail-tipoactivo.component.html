@@ -1,3 +1,8 @@
-<p>
-  detail-tipoactivo works!
-</p>
+<h3>Tipo Activo Detalle </h3>
+<div *ngIf="tipoactivo">
+<p><b>Id:</b> {{tipoactivo.Id}},  
+<b>Descripcion:</b> {{tipoactivo.Descripcion}} </p>
+<p><b>Cuenta Contable Compra:</b> {{tipoactivo.CuentaContableCompra}}</p>
+<p><b>Cuenta Contable Depreciacion:</b> {{tipoactivo.CuentaContableDepreciacion}}</p>
+<p><b>Estado:</b> {{tipoactivo.Estado}}</p>
+</div>

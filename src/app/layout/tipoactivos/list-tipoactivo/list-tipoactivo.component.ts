@@ -8,11 +8,11 @@ import { TipoActivosService } from 'app/shared/services/tipoactivos.service';
   styleUrls: ['./list-tipoactivo.component.scss']
 })
 export class ListTipoactivoComponent implements OnInit {
-  activos: Promise<TipoActivo[]>;
-  constructor(private activoService: TipoActivosService) { }
+  tipoactivos: Promise<TipoActivo[]>;
+  constructor(private tipoactivoService: TipoActivosService) { }
 
   ngOnInit() {
-    this.activos = this.activoService.getAllTiposActivo();
+    this.tipoactivos = this.tipoactivoService.getAllTiposActivo();
   }
 
 }

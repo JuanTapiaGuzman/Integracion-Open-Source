@@ -1,6 +1,6 @@
 <h3>Listado Tipo Activo</h3>
 <div *ngFor="let tipoactivo of tipoactivos | async" [ngClass]= "'sub-child-menu'">
-<p>{{tipoactivo.Descripcion}}
+<p>{{tipoactivo.Descripcion}}. {{tipoactivo.Estado}}
 	<a [routerLink]="['view', tipoactivo.Id]" routerLinkActive="active">View</a> |
 	<a [routerLink]="['edit', tipoactivo.Id]" routerLinkActive="active">Edit</a>
 </p>

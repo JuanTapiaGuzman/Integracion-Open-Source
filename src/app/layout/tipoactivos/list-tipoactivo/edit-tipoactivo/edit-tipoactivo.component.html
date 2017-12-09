@@ -1,3 +1,9 @@
-<p>
-  edit-tipoactivo works!
-</p>
+<h3>Editar Tipo Activo</h3>
+<p *ngIf="tipoactivo"><b>Tipo Activo Id: {{tipoactivo.Id }} </b></p>
+<form [formGroup]="tipoactivoForm" (ngSubmit)="onFormSubmit()">
+  <p> Descripcion: <input formControlName="descripcion"> </p>
+  <p> Cuenta Contable Compra: <input formControlName="cuentaContableCompra"> </p>
+  <p> Cuenta Contable Depreciacion: <input formControlName="cuentaContableDepreciacion"> </p>
+  <p> Estado: <input formControlName="estado"> </p>
+   <p> <button>Actualizar</button> </p>
+</form> 

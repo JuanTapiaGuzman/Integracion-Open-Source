@@ -1,3 +1,10 @@
-<p>
-  tipoactivos works!
-</p>
+<h2>MANTENIMIENTO TIPO ACTIVOS</h2>
+<nav [ngClass] = "'child-menu'">
+  <ul>
+<li><a [routerLink]="['add']" routerLinkActive="active">Agregar Tipo Activo</a></li>
+<li><a [routerLink]="['list']" routerLinkActive="active">Listado Tipo Activo</a></li>
+  </ul>  
+</nav>  
+<div [ngClass] = "'child-container'">	
+<router-outlet></router-outlet>	
+</div>
