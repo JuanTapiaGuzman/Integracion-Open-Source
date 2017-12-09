@@ -8,28 +8,28 @@ import { EditActivoComponent } from 'app/layout/activos/list-activo/edit-activo/
 
 const routes: Routes = [
   { path: '', 
-  component: ActivosComponent,
-  children: [
-    { 
-      path: 'add', 
-      component: AddActivoComponent
-    },
-    {
-      path: 'list', 
-      component: ListActivoComponent,
-      children: [
-        {
-          path: 'view/:activo-id',
-          component: DetailActivoComponent
-        },
-        {
-          path: 'edit/:activo-id',
-          component: EditActivoComponent
-        }
-      ]
-    }
-  ] 
-}
+    component: ActivosComponent,
+    children: [
+      { 
+        path: 'add', 
+        component: AddActivoComponent
+      },
+      {
+        path: 'list', 
+        component: ListActivoComponent,
+        children: [
+          {
+            path: 'view/:activo-id',
+            component: DetailActivoComponent
+          },
+          {
+            path: 'edit/:activo-id',
+            component: EditActivoComponent
+          }
+        ]
+      }
+    ] 
+  }
 ];
 
 @NgModule({

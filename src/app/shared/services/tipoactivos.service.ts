@@ -4,7 +4,7 @@ import 'rxjs/add/operator/toPromise';
 import { Http } from '@angular/http';
 
 @Injectable()
-export class TiposActivoService {
+export class TipoActivosService {
   private url: string = "http://activosfijosapi20171107045022.azurewebsites.net/Api/TipoActivo/";
   result: JSON;
 

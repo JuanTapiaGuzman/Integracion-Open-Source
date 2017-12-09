@@ -6,7 +6,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { HeaderComponent, SidebarComponent } from '../shared';
-import { TipoactivosComponent } from './tipoactivos/tipoactivos.component';
 import { CalculoComponent } from './calculo/calculo.component';
 import { AsientosComponent } from './asientos/asientos.component';
 import { DataTableModule } from 'angular-4-data-table';
@@ -23,7 +22,6 @@ import { DataTableModule } from 'angular-4-data-table';
         LayoutComponent,
         HeaderComponent,
         SidebarComponent,
-        TipoactivosComponent,
         CalculoComponent,
         AsientosComponent
     ]

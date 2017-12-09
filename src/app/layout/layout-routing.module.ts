@@ -10,7 +10,7 @@ const routes: Routes = [
             { path: 'departamentos', loadChildren: './departamentos/departamentos.module#DepartamentosModule' },
             { path: 'empleados', loadChildren: './empleados/empleados.module#EmpleadosModule' },
             { path: 'activos', loadChildren: './activos/activos.module#ActivosModule' },
-            { path: 'bs-element', loadChildren: './bs-element/bs-element.module#BsElementModule' },
+            { path: 'tipoactivos', loadChildren: './tipoactivos/tipoactivos.module#TipoactivosModule' },
             { path: 'grid', loadChildren: './grid/grid.module#GridModule' },
             { path: 'components', loadChildren: './bs-component/bs-component.module#BsComponentModule' },
             { path: 'blank-page', loadChildren: './blank-page/blank-page.module#BlankPageModule' },
