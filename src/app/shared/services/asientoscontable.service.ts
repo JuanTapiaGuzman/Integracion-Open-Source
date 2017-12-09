@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AsientoContable } from 'app/shared/models/asientocontable';
 import 'rxjs/add/operator/toPromise';
-import { Http } from '@angular/http';
+import { Http, RequestOptions, Headers } from '@angular/http';
 
 @Injectable()
 export class AsientosContableService {
@@ -27,16 +27,26 @@ export class AsientosContableService {
      }
     
      postAsientoContable(asientoContable: AsientoContable): Promise<AsientoContable> {
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      
+          headers.append('Accept', `GET,POST,PUT,OPTIONS`);
+          let options = new RequestOptions({ headers: headers });
+
        return this.http
-         .post(this.url, JSON.stringify(asientoContable))
+         .post(this.url, JSON.stringify(asientoContable), options)
          .toPromise()
          .then(res => res.json() as AsientoContable)
          .catch(this.handleError);
      }
     
      updateAsientoContable(asientoContable: AsientoContable): Promise<AsientoContable> {
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      
+          headers.append('Accept', `GET,POST,PUT,OPTIONS`);
+          let options = new RequestOptions({ headers: headers });
+
        return this.http
-         .put(this.url + asientoContable.Id, JSON.stringify(asientoContable))
+         .put(this.url + asientoContable.Id, JSON.stringify(asientoContable), options)
          .toPromise()
          .then(() => asientoContable)
          .catch(this.handleError);

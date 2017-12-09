@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Departamento } from 'app/shared/models/departamento';
 import 'rxjs/add/operator/toPromise';
-import { Http } from '@angular/http';
+import { Http,Headers} from '@angular/http';
 import { RequestOptions } from '@angular/http';
 
 @Injectable()
@@ -28,16 +28,26 @@ export class DepartamentosService {
      }
     
      postDepartamento(departamento: Departamento): Promise<Departamento> {
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      
+          headers.append('Accept', `GET,POST,PUT,OPTIONS`);
+          let options = new RequestOptions({ headers: headers });
+
        return this.http
-         .post(this.url, JSON.stringify(departamento))
+         .post(this.url, JSON.stringify(departamento), options)
          .toPromise()
          .then(res => res.json() as Departamento)
          .catch(this.handleError);
      }
     
      updateDepartamento(departamento: Departamento): Promise<Departamento> {
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      
+          headers.append('Accept', `GET,POST,PUT,OPTIONS`);
+          let options = new RequestOptions({ headers: headers });
+
        return this.http
-         .put(this.url + departamento.Id, JSON.stringify(departamento))
+         .put(this.url + departamento.Id, JSON.stringify(departamento), options)
          .toPromise()
          .then(() => departamento)
          .catch(this.handleError);

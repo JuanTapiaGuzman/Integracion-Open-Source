@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TipoActivo } from 'app/shared/models/TipoActivo';
 import 'rxjs/add/operator/toPromise';
-import { Http } from '@angular/http';
+import { Http, RequestOptions, Headers } from '@angular/http';
 
 @Injectable()
 export class TipoActivosService {
@@ -27,16 +27,26 @@ export class TipoActivosService {
      }
     
      postTipoActivo(tipoActivo: TipoActivo): Promise<TipoActivo> {
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      
+          headers.append('Accept', `GET,POST,PUT,OPTIONS`);
+          let options = new RequestOptions({ headers: headers });
+
        return this.http
-         .post(this.url, JSON.stringify(tipoActivo))
+         .post(this.url, JSON.stringify(tipoActivo), options)
          .toPromise()
          .then(res => res.json() as TipoActivo)
          .catch(this.handleError);
      }
     
      updateTipoActivo(tipoActivo: TipoActivo): Promise<TipoActivo> {
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      
+          headers.append('Accept', `GET,POST,PUT,OPTIONS`);
+          let options = new RequestOptions({ headers: headers });
+
        return this.http
-         .put(this.url + tipoActivo.Id, JSON.stringify(tipoActivo))
+         .put(this.url + tipoActivo.Id, JSON.stringify(tipoActivo), options)
          .toPromise()
          .then(() => tipoActivo)
          .catch(this.handleError);
