@@ -36,7 +36,7 @@ export class ActivosService {
     
      updateActivo(activo: Activo): Promise<Activo> {
        return this.http
-         .put(this.url, JSON.stringify(activo))
+         .put(this.url + activo.Id, JSON.stringify(activo))
          .toPromise()
          .then(() => activo)
          .catch(this.handleError);

@@ -36,7 +36,7 @@ export class EmpleadosService {
     
      updateEmpleado(empleado: Empleado): Promise<Empleado> {
        return this.http
-         .put(this.url, JSON.stringify(empleado))
+         .put(this.url + empleado.Id, JSON.stringify(empleado))
          .toPromise()
          .then(() => empleado)
          .catch(this.handleError);

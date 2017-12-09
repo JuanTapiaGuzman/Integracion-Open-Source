@@ -36,7 +36,7 @@ export class TiposActivoService {
     
      updateTipoActivo(tipoActivo: TipoActivo): Promise<TipoActivo> {
        return this.http
-         .put(this.url, JSON.stringify(tipoActivo))
+         .put(this.url + tipoActivo.Id, JSON.stringify(tipoActivo))
          .toPromise()
          .then(() => tipoActivo)
          .catch(this.handleError);
