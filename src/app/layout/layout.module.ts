@@ -9,6 +9,7 @@ import { HeaderComponent, SidebarComponent } from '../shared';
 import { CalculoComponent } from './calculo/calculo.component';
 import { AsientosComponent } from './asientos/asientos.component';
 import { DataTableModule } from 'angular-4-data-table';
+import { DepreciacionAcumuladaComponent } from './depreciacion-acumulada/depreciacion-acumulada.component';
 
 @NgModule({
     imports: [
@@ -23,7 +24,8 @@ import { DataTableModule } from 'angular-4-data-table';
         HeaderComponent,
         SidebarComponent,
         CalculoComponent,
-        AsientosComponent
+        AsientosComponent,
+        DepreciacionAcumuladaComponent
     ]
 })
 export class LayoutModule { }
