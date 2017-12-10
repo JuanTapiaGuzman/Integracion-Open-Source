@@ -1,7 +1,7 @@
 {
     "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
     "project": {
-        "name": "sb-admin-angular4-bootstrap4"
+        "name": "Activos Fijos"
     },
     "apps": [
         {
@@ -10,8 +10,17 @@
             "assets": [
                 "assets",
                 "favicon.ico",
-                ".htaccess"
-            ],
+                {
+                  "glob": "index.js",
+                  "input": "./server/",
+                  "output": "./"
+                },
+                {
+                  "glob": "package.json",
+                  "input": "./server/",
+                  "output": "./"
+                }
+              ],
             "index": "index.html",
             "main": "main.ts",
             "polyfills": "polyfills.ts",
